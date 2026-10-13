@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥗</text></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Unbounded:wght@600;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<title>Статистика</title>
+</head>
+<body>
+<div class="page-head"><div class="wrap">
+  <h1>Статистика</h1>
+  <p class="lead">Как вы питались в последние дни и насколько близко к цели.</p>
+</div></div>
+<main>
+  <label style="max-width:220px">Период
+    <select id="range"><option value="7">7 дней</option><option value="14">14 дней</option><option value="30">30 дней</option></select></label>
+  <section id="res" class="card"></section>
+</main>
+<script src="js/config.js"></script><script src="js/common.js"></script><script src="js/storage.js"></script><script src="js/stats.js"></script>
+</body>
+</html>

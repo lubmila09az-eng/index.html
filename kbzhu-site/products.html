@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥗</text></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Unbounded:wght@600;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<title>Продукты</title>
+</head>
+<body>
+<div class="page-head"><div class="wrap">
+  <h1>Продукты</h1>
+  <p class="lead">Значения указаны на 100 г продукта. Добавьте свои, если нужного нет в списке.</p>
+</div></div>
+<main>
+  <form id="add" class="card inline">
+    <label class="grow">Название <input name="name" maxlength="80" required></label>
+    <label>Ккал <input name="kcal" type="number" min="0" max="900" step="0.1" required></label>
+    <label>Белки, г <input name="p" type="number" min="0" max="100" step="0.1" required></label>
+    <label>Жиры, г <input name="f" type="number" min="0" max="100" step="0.1" required></label>
+    <label>Углеводы, г <input name="c" type="number" min="0" max="100" step="0.1" required></label>
+    <button class="btn" type="submit">Добавить продукт</button>
+  </form>
+  <section class="card">
+    <label>Поиск <input id="q" type="search" placeholder="Например, гречка"></label>
+    <div class="scroll"><table>
+      <thead><tr><th>Продукт</th><th>Ккал</th><th>Б</th><th>Ж</th><th>У</th><th></th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+    <p id="empty" class="empty" hidden>Ничего не найдено. Измените запрос или добавьте продукт.</p>
+  </section>
+</main>
+<script src="js/config.js"></script><script src="js/common.js"></script><script src="js/storage.js"></script><script src="js/products.js"></script>
+</body>
+</html>

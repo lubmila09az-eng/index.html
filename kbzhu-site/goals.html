@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мои цели</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥗</text></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Unbounded:wght@600;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page-head"><div class="wrap">
+  <h1>Мои цели</h1>
+  <p class="lead">Задайте суточную норму и целевой вес. Дневник и статистика будут сверяться с ними.</p>
+</div></div>
+<main>
+  <form id="g" class="card">
+    <h2>Норма на день</h2>
+    <div class="grid4">
+      <label>Калории, ккал <input name="kcal" type="number" min="800" max="6000" required></label>
+      <label>Белки, г <input name="p" type="number" min="0" max="500" required></label>
+      <label>Жиры, г <input name="f" type="number" min="0" max="400" required></label>
+      <label>Углеводы, г <input name="c" type="number" min="0" max="900" required></label>
+    </div>
+    <p id="kcheck" class="note"></p>
+    <h2 class="sec">Вес</h2>
+    <div class="grid4">
+      <label>Сейчас, кг <input name="weight" type="number" min="30" max="300" step="0.1"></label>
+      <label>Цель, кг <input name="target" type="number" min="30" max="300" step="0.1"></label>
+    </div>
+    <p id="eta" class="note"></p>
+    <button class="btn" type="submit">Сохранить цели</button> <span id="msg" role="status" class="note"></span>
+  </form>
+  <p class="note">Нет понятной нормы? <a href="index.html">Рассчитайте её в калькуляторе</a>.</p>
+</main>
+<script src="js/config.js"></script><script src="js/common.js"></script><script src="js/storage.js"></script><script src="js/goals.js"></script>
+</body>
+</html>

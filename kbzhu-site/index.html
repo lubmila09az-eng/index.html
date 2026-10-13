@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калькулятор калорий и здорового питания</title>
+<meta name="description" content="Рассчитайте норму калорий, белков, жиров и углеводов, ведите дневник питания и следите за прогрессом.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥗</text></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Unbounded:wght@600;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="hero"><div class="wrap">
+  <h1>Узнайте свою норму питания за полминуты</h1>
+  <p class="lead">Калории, белки, жиры и углеводы под ваш рост, вес и цель. Результат обновляется, пока вы вводите данные.</p>
+  <div class="calc">
+    <form id="f" class="card">
+      <div class="row2">
+        <label>Пол <select name="sex"><option value="m">Мужской</option><option value="f">Женский</option></select></label>
+        <label>Возраст, лет <input name="age" type="number" min="10" max="100" value="30" required></label>
+        <label>Рост, см <input name="height" type="number" min="100" max="250" value="175" required></label>
+        <label>Вес, кг <input name="weight" type="number" min="30" max="300" step="0.1" value="70" required></label>
+      </div>
+      <label>Активность
+        <select name="activity">
+          <option value="1.2">Сидячий образ жизни</option>
+          <option value="1.375">Лёгкая: тренировки 1–3 раза в неделю</option>
+          <option value="1.55" selected>Умеренная: 3–5 раз в неделю</option>
+          <option value="1.725">Высокая: 6–7 раз в неделю</option>
+          <option value="1.9">Очень высокая: тяжёлый труд или две тренировки в день</option>
+        </select></label>
+      <label>Цель
+        <select name="goal">
+          <option value="0.85">Снизить вес (−15% калорий)</option>
+          <option value="1" selected>Поддерживать вес</option>
+          <option value="1.1">Набрать массу (+10% калорий)</option>
+        </select></label>
+    </form>
+    <section class="result" aria-live="polite">
+      <div class="ring big">
+        <svg viewBox="0 0 100 100" role="img" aria-label="Доли белков, жиров и углеводов">
+          <circle class="t" cx="50" cy="50" r="42" fill="none" stroke-width="10"/>
+          <circle id="rp" cx="50" cy="50" r="42" fill="none" stroke="var(--p)" stroke-width="10" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+          <circle id="rf" cx="50" cy="50" r="42" fill="none" stroke="var(--f)" stroke-width="10" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+          <circle id="rc" cx="50" cy="50" r="42" fill="none" stroke="var(--c)" stroke-width="10" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+        </svg>
+        <div><b id="kcal">0</b><small>ккал в день</small></div>
+      </div>
+      <div class="macros">
+        <div><span><i class="dot p"></i>Белки</span><b id="vp">0 г</b></div>
+        <div><span><i class="dot f"></i>Жиры</span><b id="vf">0 г</b></div>
+        <div><span><i class="dot c"></i>Углеводы</span><b id="vc">0 г</b></div>
+      </div>
+      <p class="note" id="note"></p>
+      <div><button class="btn lemon" id="save" type="button">Сделать моей целью</button> <span id="msg" role="status"></span></div>
+    </section>
+  </div>
+</div></div>
+<main>
+  <section id="today" class="card" hidden></section>
+  <h2 class="sec">Как это работает</h2>
+  <ol class="steps">
+    <li><span class="num">1</span><h3>Рассчитайте норму</h3><p>Введите рост, вес и цель. Калькулятор выше сразу покажет вашу норму.</p></li>
+    <li><span class="num">2</span><h3>Записывайте еду</h3><p>Выбирайте продукты из списка или добавляйте свои. <a href="diary.html">Открыть дневник</a></p></li>
+    <li><span class="num">3</span><h3>Смотрите прогресс</h3><p>Графики покажут, как вы питались за неделю или месяц. <a href="stats.html">Открыть статистику</a></p></li>
+  </ol>
+</main>
+<script src="js/config.js"></script><script src="js/common.js"></script><script src="js/storage.js"></script><script src="js/calculator.js"></script>
+</body>
+</html>

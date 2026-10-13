@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥗</text></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Unbounded:wght@600;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<title>Дневник питания</title>
+</head>
+<body>
+<div class="page-head"><div class="wrap">
+  <h1>Дневник питания</h1>
+  <p class="lead">Записывайте, что съели, и следите за остатком до цели.</p>
+</div></div>
+<main>
+  <label style="max-width:220px">Дата <input type="date" id="day"></label>
+  <form id="add" class="card inline">
+    <label class="grow">Продукт <select id="prod"></select></label>
+    <label>Граммы <input id="g" type="number" min="1" max="5000" required></label>
+    <label>Приём пищи <select id="meal"></select></label>
+    <button class="btn" type="submit">Добавить</button>
+  </form>
+  <section id="tot" class="card"></section>
+  <section class="card">
+    <h2>Записи за день</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>Приём</th><th>Продукт</th><th>г</th><th>Ккал</th><th>Б</th><th>Ж</th><th>У</th><th></th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+    <p id="empty" class="empty">За этот день записей нет. Добавьте первый продукт выше.</p>
+  </section>
+</main>
+<script src="js/config.js"></script><script src="js/common.js"></script><script src="js/storage.js"></script><script src="js/diary.js"></script>
+</body>
+</html>
